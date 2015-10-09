@@ -27,3 +27,5 @@ urlpatterns = [
 urlpatterns += [
     url(r'^api/', include('reactoserver.apiurls', namespace='api')),
 ]
+
+import songs.urls

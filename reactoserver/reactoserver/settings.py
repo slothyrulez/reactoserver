@@ -42,7 +42,15 @@ INSTALLED_APPS = (
     'songs',
     'playerstatus',
     'corsheaders',
+    'swampdragon',
 )
+
+SWAMP_DRAGON_HEARTBEAT_ENABLED = True
+SWAMP_DRAGON_HEARTBEAT_FREQUENCY = 1000 * 60  # 1min
+SWAMP_DRAGON_HOST = "localhost"
+SWAMP_DRAGON_PORT = "9999"
+SWAMP_DRAGON_CONNECTION = ('swampdragon.connections.sockjs_connection.DjangoSubscriberConnection', '/data')
+DRAGON_URL = 'http://' + SWAMP_DRAGON_HOST + ':' + SWAMP_DRAGON_PORT  + '/'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -111,6 +119,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'medias')
+SONGS_STORAGE = os.path.join(MEDIA_ROOT, 'songs')
 
 # Add secrets
 exec(open(os.path.join(BASE_DIR, "reactoserver", "secrets.py")).read())
