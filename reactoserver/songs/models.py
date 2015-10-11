@@ -1,4 +1,6 @@
 #! -*- codin: utf-8 -*-
+
+import uuid
 import mimetypes
 import datetime
 
@@ -15,6 +17,7 @@ SONGS_DIR = getattr(settings, "SONGS_STORAGE", getattr(settings, "MEDIA_ROOT"))
 
 class Song(models.Model):
     """ Song model """
+    uuid = models.UUIDField(default=uuid.uuid4, db_index=True, editable=False)
     ctime = models.DateField(auto_now_add=True)
     mtime = models.DateField(auto_now=True)
     title = models.CharField(max_length=255)
@@ -32,7 +35,7 @@ class Song(models.Model):
     )
 
     def __str__(self):
-        return self.title
+        return "{} - {}".format(self.title, self.uuid)
 
 
 def get_mime_type(path):
@@ -42,7 +45,7 @@ def get_mime_type(path):
 def get_song_lenght(path):
     mp3meta = MP3(path)
     if mp3meta.info:
-        return datetime.timedelta(minutes=mp3meta.info.length)
+        return datetime.timedelta(seconds=mp3meta.info.length)
     return datetime.timedelta
 
 

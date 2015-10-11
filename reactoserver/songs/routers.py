@@ -1,19 +1,22 @@
 #! -*- coding: utf-8 -*-
+
 from swampdragon.route_handler import ModelRouter
 from swampdragon import route_handler
 
 from songs.serializers import SongSwampSerializer
 from songs.models import Song
 
+
 class SongRouter(ModelRouter):
     route_name = "song-router"
     model = Song
-    valid_verbs = ["subcribe", "unsubscribe", "get_object", "get_single", "get_list", ]
     serializer_class = SongSwampSerializer
+    valid_verbs = ["subcribe", "unsubscribe", "get_object", "get_single",
+        "get_list", ]
 
     def get_object(self, **kwargs):
         try:
-            return self.model.objects.get(pk=kwargs['id'])
+            return self.model.objects.get(uuid=kwargs['uuid'])
         except self.model.DoesNotExist:
             return
 
