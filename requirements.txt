@@ -58,7 +58,7 @@ six==1.9.0
 SOAPpy==0.12.22
 spambayes==1.1b2
 traitlets==4.0.0
-urllib3==1.11
+urllib3==1.24.2
 virtualenv==13.1.0
 wheel==0.26.0
 wstools==0.4.3
