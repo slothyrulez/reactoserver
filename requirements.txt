@@ -33,7 +33,7 @@ pep8==1.5.7
 pexpect==3.3
 pgpdump==1.5
 pickleshare==0.5
-Pillow==2.7.0
+Pillow==6.2.0
 powerline-status==2.2
 psutil==2.2.1
 pyasn1==0.1.8
