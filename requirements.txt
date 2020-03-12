@@ -35,7 +35,7 @@ pgpdump==1.5
 pickleshare==0.5
 Pillow==2.7.0
 powerline-status==2.2
-psutil==2.2.1
+psutil==5.6.6
 pyasn1==0.1.8
 pycrypto==2.6.1
 pycups==1.9.72
