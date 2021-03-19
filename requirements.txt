@@ -15,7 +15,7 @@ ipdb==0.8.1
 IPy==0.83
 ipython==4.0.0
 ipython-genutils==0.1.0
-Jinja2==2.8
+Jinja2==2.11.3
 lockfile==0.10.2
 lxml==3.4.4
 MarkupSafe==0.23
