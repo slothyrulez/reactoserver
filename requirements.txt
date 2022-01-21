@@ -13,7 +13,7 @@ glipper==2.4
 html5lib==0.999
 ipdb==0.8.1
 IPy==0.83
-ipython==4.0.0
+ipython==7.16.3
 ipython-genutils==0.1.0
 Jinja2==2.8
 lockfile==0.10.2
