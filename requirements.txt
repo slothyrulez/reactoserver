@@ -60,5 +60,5 @@ spambayes==1.1b2
 traitlets==4.0.0
 urllib3==1.11
 virtualenv==13.1.0
-wheel==0.26.0
+wheel==0.38.1
 wstools==0.4.3
